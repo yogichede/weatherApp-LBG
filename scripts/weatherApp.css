@@ -1,0 +1,24 @@
+.select-list {
+  width: 20%;
+  border: 1px solid silver;
+  background-color: white;
+  margin: 2% 2%;
+}
+.weather-data {
+  border: 1px solid silver;
+  width: 40%;
+  text-align: center;
+  margin: 20px;
+}
+.location-details {
+  width: 80%;
+  margin: 15px 20px;
+  font-size: 15px;
+}
+.location-name {
+  margin: 20px;
+  font-size: 16px;
+}
+.state-list {
+  margin: 2% 10%;
+}
