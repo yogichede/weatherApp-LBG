@@ -2,10 +2,11 @@
 
 ### Initial Setup
 
-
+```
 npm install
 npm start
-Open http://localhost:5000
+Open http://localhost:4000
+```
 
 ### Linting
 

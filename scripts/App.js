@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-// import moment from 'moment';
-//import Select from 'react-select';
-// import 'react-select/dist/react-select.min.css';
 
 export default class App extends Component {
   constructor(props){
