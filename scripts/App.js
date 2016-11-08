@@ -38,14 +38,14 @@ export default class App extends Component {
   render() {
     let gridView = null;
     if(this.state.responceData){
-    gridView = this.state.responceData.list.map((data, key)=>{
+    gridView = this.state.responceData.list.map((data, i)=>{
       return (
-        <div className='grid-view'>
-          <div key={key}>Date: {data.dt_txt}</div>
+        <div className='grid-view' key={i}>
+          <div>Date: {data.dt_txt}</div>
           <div>Humidity : {data.main.humidity}</div>
           <div>Pressure : {data.main.pressure}</div>
           <div>Temperature : {data.main.temp}</div>
-          <div>Wind(deg) : {data.wind.deg}</div>
+          <div>Wind : {data.wind.deg}°</div>
         </div>
       );
     });
@@ -54,9 +54,9 @@ export default class App extends Component {
       <div>
         <div className='state-list'>
           <label>Slect State </label>
-          <select className='select-list'
+          <select ref='data' className='select-list'
             onChange={this.handleChange}>
-            <option disabled>Select State</option>
+            <option >Select State</option>
             <option value='Chennai'>Chennai</option>
             <option value='AndhraPradesh'>AndhraPradesh</option>
             <option value='Banglore'>Banglore</option>
