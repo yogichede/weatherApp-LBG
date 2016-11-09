@@ -1,24 +1,31 @@
+.state-list {
+  margin: 2% 10%;
+ }
 .select-list {
   width: 20%;
   border: 1px solid silver;
   background-color: white;
   margin: 2% 2%;
 }
-.weather-data {
-  border: 1px solid silver;
-  width: 40%;
-  text-align: center;
-  margin: 20px;
-}
 .location-details {
   width: 80%;
-  margin: 15px 20px;
+  margin: 0 auto;
   font-size: 15px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 450px;
 }
 .location-name {
   margin: 20px;
   font-size: 16px;
+  text-align: center;
 }
-.state-list {
-  margin: 2% 10%;
+.grid-view {
+  margin: 10px;
+  border: 2px solid #ccc;
+  width: 23%;
+  background-color: rgba(222, 255, 223, 0.32);
+  padding: 20px;
+  float:left;
+  border-radius: 10px;
 }
