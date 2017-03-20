@@ -1,14 +1,41 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Column, Table } from 'react-virtualized';
+//import 'react-virtualized/styles.css';
 
+const list = [
+  { version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'},
+ { version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'},
+ { version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'},
+{ version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'},
+{ version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'}, 
+{ version: 'Brian Vaughn', subversion: 'Software engineer', conditions: 'Software engineer',EffectiveDate:"23/04/22",ExpDate: '22/05/22',Received:'20/11/22'},
+  // And so on... 
+];
 export default class App extends Component {
+
   constructor(props){
     super(props);
     this.state = {
       responceData: null,
       Selectedlocation: null
     };
+    
   }
+
+  /*
+cellRenderer=  ({ columnIndex, key, rowIndex, style }) => {
+  debugger;
+  return (
+    <div
+      key={key}
+      style={style}
+    >
+      {list[rowIndex][columnIndex]}
+    </div>
+  )  
+}*/
+
 /** This function will conce user select the state/country */
   handleChange=(event)=> {
     this.fetchWeatherData(event.target.value);
@@ -52,6 +79,47 @@ export default class App extends Component {
   }
     return (
       <div>
+      <div>
+      <Table
+        width={500}
+        height={400}
+        headerHeight={50}
+        rowHeight={40}
+        rowCount={list.length}
+        rowGetter={({ index }) => list[index]}
+  >
+    <Column
+      label='Name'
+      dataKey='version'
+      width={100}
+    />
+    <Column
+      width={100}
+      label='Subversion'
+      dataKey='subversion'
+    />
+        <Column
+      width={100}
+      label='Conditions'
+      dataKey='conditions'
+    />
+        <Column
+      width={100}
+      label='EffectiveDate'
+      dataKey='EffectiveDate'
+    />
+        <Column
+      width={100}
+      label='Experidate'
+      dataKey='ExpDate'
+    />
+        <Column
+      width={100}
+      label='Received'
+      dataKey='Received'
+    />
+  </Table>
+       </div>
         <div className='state-list'>
           <label>Slect State </label>
           <select ref='data' className='select-list'
