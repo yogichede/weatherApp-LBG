@@ -32,7 +32,7 @@ export default class FriendList extends Component {
         {props.label}
         <input type='text' onChange={(e)=> {
           if(e.target.value){
-            let filtered = list.filter(a=> a[props.dataKey] === new RegExp(e.target.value));
+            let filtered = list.filter(a=> a[props.dataKey].includes(e.target.value));
             this.setState({list: filtered});
           }
           else {
